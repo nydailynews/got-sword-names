@@ -26,7 +26,7 @@ h1 {
     margin: auto;
 }
 
-h4 {
+h2 {
     color: #aaff4d;
     text-transform: uppercase;
     font: normal 50px 'Press Start 2P', cursive;
@@ -105,7 +105,7 @@ p#url {
     font-size: 16px;
     color: #bbb;
 }
-.bg p {
+.bg p.byline {
     color: white;
 }
 .hide { display: none; }
