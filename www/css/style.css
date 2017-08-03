@@ -107,6 +107,7 @@ button {
 }
 .bg p.byline {
     color: white;
+    font-size: 11px;
 }
 .hide { display: none; }
 /* HANDHELD-SPECIFIC */
