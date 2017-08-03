@@ -47,7 +47,7 @@ h4 {
 .main-text {
     width: 100%;
     text-align: center;
-    padding: 60px;
+    padding: 45px;
 }
 
 .main-text p {
@@ -68,7 +68,7 @@ h4 {
     display: block;
     text-align: center;
     border: 2px dashed #b4b4b4;
-    background: #f2f2f2;
+    background: gray;
     width: 600px;
     height: 400px;
     margin: auto;
@@ -100,15 +100,8 @@ button {
     margin-bottom: 30px;
 }
 
-.reset {
-    text-align: center;
-    margin: 25px;
-}
+.bottom {
 
-.reset a {
-    text-decoration: underline;
-    color: white;
-    font: normal 13px 'Open Sans', sans-serif;
 }
 
 p#url {
