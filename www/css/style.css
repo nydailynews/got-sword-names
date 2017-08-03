@@ -104,10 +104,10 @@ button {
 
 }
 
-p#url {
-    margin-top: 20px;
+#url {
+    margin-top: 10px;
     font-size: 16px;
-    color: #bbb;
+    color: #fff;
 }
 .bg p.byline {
     color: white;

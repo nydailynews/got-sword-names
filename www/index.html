@@ -193,7 +193,6 @@ function save_image()
     html2canvas($('#weapon'), {
         allowTaint: true,
         onrendered: function(canvas) {
-            $('#url').removeClass('hide');
 
             document.body.appendChild(canvas);
             window.oCanvas = document.getElementsByTagName("canvas");
@@ -252,7 +251,10 @@ $.getJSON('data.json', function(name_data) {
         $('#weapon-name').text(random(prefix)+' '+random(suffix));
         // selectElementContents($('#weapon-name')[0]);
         });
-    $('#save-weapon').click(function(){save_image()});
+    $('#save-weapon').click(function(){
+        $('#url').removeClass('hide');
+        save_image();
+    });
 
     // In case we're back here via save button
     if ( document.referrer == document.location.href ) $('#generate-name').trigger('click');
