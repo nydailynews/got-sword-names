@@ -258,6 +258,9 @@ $.getJSON('data.json', function(name_data) {
         // selectElementContents($('#weapon-name')[0]);
         });
     $('#save-weapon').click(function(){save_image()});
+
+    // In case we're back here via save button
+    if ( document.referrer == document.location.href ) $('#generate-name').trigger('click');
 });
 
 </script>
