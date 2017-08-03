@@ -134,6 +134,7 @@
             <div class="weapon">
                 <img id="weapon-image" src="img/weapon-start.png" style="width: 85%;" alt="an image of pixel art weapons">
                 <p id="weapon-name"></p>
+                <p id="url" class="hide">http://nydn.us/blades</p>
             </div>
         </div>
         <div>
@@ -191,7 +192,7 @@ function save_image()
     html2canvas($('#weapon'), {
         allowTaint: true,
         onrendered: function(canvas) {
-            //$('#credit').removeClass('hide');
+            $('#url').removeClass('hide');
 
             document.body.appendChild(canvas);
             window.oCanvas = document.getElementsByTagName("canvas");
@@ -208,7 +209,7 @@ function save_image()
             $('#download-'+filename).trigger('click');
             window.location.reload(true);
 
-            //$('#credit').addClass('hide');
+            $('#url').addClass('hide');
         }
     });
 }

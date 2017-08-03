@@ -107,3 +107,10 @@ button {
     color: white;
     font: normal 13px 'Open Sans', sans-serif;
 }
+
+p#url {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #bbb;
+}
+.hide { display: none; }
