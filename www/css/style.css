@@ -17,13 +17,13 @@ h1 {
     font: normal 13px 'Press Start 2P', cursive;
     color: black;
     padding-top: 6px;
-}
-
-.top {
     background-image: url(../img/title-bg.png);
     height: 25px;
     width: 300px;
     margin: auto;
+}
+h1 span {
+    display: none;
 }
 
 h2 {
