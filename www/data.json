@@ -1,442 +1,437 @@
 [
  {
    "name": "balder",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "bear",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "bleak",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "bliss",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "blood",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "bright",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "chimera",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "cortana",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "crow",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "dark",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "dawn",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "day",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "demon",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "devil",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "dragon",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "frost",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "ghoul",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "goblin",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "hearth",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "hell",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "ice",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "kin",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "kobold",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "lady",
-   "1": 1,
+   "prefix": 1,
    "suffix": 1
  },
  {
    "name": "lich",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "light",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "lion",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "manticore",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "medusa",
-   "1": 1,
-   "suffix": null
- },
- {
-   "name": "night's",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "obsidian",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "orc",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "raven",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "red",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "shield",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "slay",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "soul",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "spell",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "storm",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "swift",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "tiger",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "truth",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "war",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "wight",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "wyvern",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "the",
-   "1": 1,
+   "prefix": 1,
    "suffix": null
  },
  {
    "name": "",
-   "1": null,
+   "prefix": null,
    "suffix": null
  },
  {
    "name": "maul",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "night",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "scream",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "sting",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "bane",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "blade",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "breaker",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "bringer",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "brother",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "claw",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "cleaver",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "cutter",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "dawn",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "defender",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "fall",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "fyre",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "keeper",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "maker",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "master",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "rain",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "reaper",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "ripper",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "roar",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "sister",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "skewer",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "slayer",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "slicer",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "steel",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "striker",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "tooth",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "vengeance",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "wail",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "weep",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "of the dawn",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "of the night",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "sword",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "ax",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "mace",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "grief",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "eater",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  },
  {
    "name": "scalpel",
-   "1": null,
+   "prefix": null,
    "suffix": 1
  }
 ]
