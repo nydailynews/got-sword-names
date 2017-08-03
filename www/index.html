@@ -214,7 +214,6 @@ function save_image()
     });
 }
 
-
 function names(data, search_field) {
     var bucket = []
     for (var i = 0; i < data.length; i++) {        
@@ -235,21 +234,12 @@ function new_weapon() {
     return 'img/weapon-'+ x + '.png';
 }
 
-function selectElementContents(words) {
-    var range = document.createRange();
-    range.selectNodeContents(words);
-    var sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
-}
-
 $.getJSON('data.json', function(name_data) {
     prefix = names(name_data, 'prefix');
     suffix = names(name_data, 'suffix');
     $('#generate-name').click(function() {
         $('#weapon-image').attr('src',new_weapon())
         $('#weapon-name').text(random(prefix)+' '+random(suffix));
-        // selectElementContents($('#weapon-name')[0]);
         });
     $('#save-weapon').click(function(){
         $('#url').removeClass('hide');
