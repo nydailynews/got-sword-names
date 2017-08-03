@@ -68,7 +68,7 @@ h2 {
     display: block;
     text-align: center;
     border: 2px dashed #b4b4b4;
-    background: gray;
+    background: #3B3C45;
     width: 600px;
     height: 400px;
     margin: auto;
@@ -82,7 +82,7 @@ h2 {
 
 #weapon-name {
     font: normal 30px 'Press Start 2P', cursive;
-    color: black;
+    color: lightgray;
     text-transform: uppercase;
     margin-top: 10px;
 }
@@ -98,10 +98,6 @@ button {
     color: #aaff4d;
     margin: 10px;
     margin-bottom: 30px;
-}
-
-.bottom {
-
 }
 
 #url {
