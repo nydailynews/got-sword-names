@@ -79,14 +79,14 @@ a {
     margin: auto;
 }
 
-#weapon .initial {
-    width: 50%;
-}
-
 .weapon {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+
+#weapon .initial {
+    width: 50%;
 }
 
 #weapon-image {
@@ -99,7 +99,6 @@ a {
     text-transform: uppercase;
     margin-top: 15px;
 }
-
 
 button {
     border: 1px solid #aaff4d;
