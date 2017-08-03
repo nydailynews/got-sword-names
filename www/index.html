@@ -248,13 +248,15 @@ $.getJSON('data.json', function(name_data) {
     // In case we're back here via save button
     if ( document.referrer == document.location.href ) $('#generate-name').trigger('click');
 
+    $('#rh-subnav').html($('#ra-share-top'));   
+    $('#ra-share-top').removeClass('hide');
 });
 
 </script>
-     <ul class="hide ra-share" id="ra-share-top" style="margin-bottom: 0px;">
-        <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=">facebook</a> </li>
-        <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=">Tweet</a></li>
-        <li class="ra-share-e"> <a href="mailto:?subject=&body=">email</a> </li>
+     <ul class="hide ra-share" id="ra-share-top">
+        <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://interactive.nydailynews.com/project/choose-your-weapon/">facebook</a> </li>
+        <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=Make your own sword name with our Game of Thrones sword name generator&url=http://nydn.us/blades&via=nydailynews&related=nydni,kelliparker">Tweet</a></li>
+        <li class="ra-share-e"> <a href="mailto:?subject=Game of Thrones sword name generator&body=http://interactive.nydailynews.com/project/choose-your-weapon/">email</a> </li>
     </ul>
 </body>
 </html>

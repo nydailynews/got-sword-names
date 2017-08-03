@@ -5,10 +5,6 @@ html, body {
     padding: 0
 }
 
-#rh-subnav {
-    display: none;
-}
-
 li {
     list-style: none
 }
@@ -123,6 +119,10 @@ button {
 }
 .hide {
     display: none;
+}
+
+#ra-share-top {
+    padding-top: 5px;
 }
 
 /* HANDHELD-SPECIFIC */
