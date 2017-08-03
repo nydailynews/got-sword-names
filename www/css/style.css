@@ -58,6 +58,11 @@ h2 {
     margin: auto;
 }
 
+a {
+    color: white;
+    text-decoration: underline;
+}
+
 .button-box {
     display: block;
     text-align: center;
@@ -74,17 +79,25 @@ h2 {
     margin: auto;
 }
 
+#weapon .initial {
+    width: 50%;
+}
+
 .weapon {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
 
+#weapon-image {
+    width: 85%;
+}
+
 #weapon-name {
     font: normal 30px 'Press Start 2P', cursive;
     color: lightgray;
     text-transform: uppercase;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 

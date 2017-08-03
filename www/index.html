@@ -131,7 +131,7 @@
 
         <div id="weapon" class="action-box">
             <div class="weapon">
-                <img id="weapon-image" src="img/weapon-start.png" style="width: 85%;" alt="an image of pixel art weapons">
+                <img id="weapon-image" src="img/weapon-start.png" class="initial" alt="an image of pixel art weapons">
                 <p id="weapon-name"></p>
                 <p id="url" class="hide">http://nydn.us/blades</p>
             </div>
@@ -239,7 +239,8 @@ $.getJSON('data.json', function(name_data) {
     suffix = names(name_data, 'suffix');
     hsh = document.location.hash.substr(1);
     $('#generate-name').click(function() {
-        $('#weapon-image').attr('src',new_weapon())
+        $('#weapon-image').removeClass('initial');
+        $('#weapon-image').attr('src',new_weapon());
         $('#weapon-name').text(random(prefix)+' '+random(suffix));
     });
     $('#save-weapon').click(function(){
