@@ -128,23 +128,16 @@ button {
 
 /* HANDHELD-SPECIFIC */
 @media only screen and ( min-width: 220px ) and ( max-width:727px ) {
+    .main-text p {
+        max-width: 95%;
+    }
     .action-box {
-        display: block;
-        text-align: center;
-        border: 2px dashed #b4b4b4;
-        background: #3B3C45;
         width: 100%;
-        height: 400px;
-        margin: auto;
+        height: 250px;
     }
     .bg {
         width: 100%;
-        height: 950px;
-        background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../img/sword-bg.jpg);
-        background-size: cover;
-        background-color: black;
-        margin: auto;
-        text-align: center;
+        height: auto;
     }
 }
 /* TABLET-SPECIFIC */
