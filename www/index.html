@@ -113,9 +113,6 @@
 <!-- SITEHEADER-END -->
 
 <!-- CONTENT-START -->
-
-
-
 <main>
     <div class="bg">
         <div class="main-text">
@@ -250,9 +247,14 @@ $.getJSON('data.json', function(name_data) {
 
     // In case we're back here via save button
     if ( document.referrer == document.location.href ) $('#generate-name').trigger('click');
+
 });
 
 </script>
-
+     <ul class="hide ra-share" id="ra-share-top" style="margin-bottom: 0px;">
+        <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=">facebook</a> </li>
+        <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=">Tweet</a></li>
+        <li class="ra-share-e"> <a href="mailto:?subject=&body=">email</a> </li>
+    </ul>
 </body>
 </html>
