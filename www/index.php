@@ -173,13 +173,8 @@ endif;
         <div style="margin: 10px;">
             <div id="audio">
                 <button onClick="play_audio();">Play Audio</button>
+				<audio id="player" class="hide" controls="controls">
             </div>
-<!--
-        <audio controls="controls">
-            <source src="game-of-thrones-8-bit.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
--->
         <p class="byline">Interactive by Jenna Bouchard and Kelli R. Parker • Music by<a href="https://youtu.be/qyCCfJwFh8I" style="color: #aaff4d;" target="_blank"> Floating Point</a></p>
         </div>
 
@@ -368,12 +363,14 @@ $.getJSON('data.json', function(name_data) {
 });
 
 function play_audio() {
-    var music = document.createElement('audio');
-    music.setAttribute('controls', 'controls');
-    music.setAttribute('autoplay', 'autoplay');
+    var music = document.getElementById('player');
+    //music.setAttribute('autoplay', 'autoplay');
     music.src = 'game-of-thrones-8-bit.mp3';
     music.type = 'audio/mpeg';
-    $('#audio').html(music);
+    $('#player').removeClass('hide');
+    $('#audio button').remove();
+	music.load();
+	music.play();
 }
 
 
