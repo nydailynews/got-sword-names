@@ -322,7 +322,8 @@ function load_weapon(hash, data) {
     }
 
 var count = 0;
-var ad = 0;
+var ad = 1;
+var ad_id = 'div-gpt-ad-1423507761396-';
 function generate_weapon() {
     if ( count == 0 ) {
         $('#weapon-image').removeClass('initial');
@@ -330,19 +331,22 @@ function generate_weapon() {
         document.getElementById("share-weapon").disabled = false;
     } 
     count += 1;
-    if ( count < 35 ) {
-        if ( count % 10 == 0 ) {
-            ad += 1;
-            $('#weapon-image').addClass('hide');
-            $('#ad' + ad).removeClass('hide');
-            $('#weapon-name').text('ad');
-            return true;
-        }
-        if ( count % 10 == 1 ) {
-            $('#ad' + ad).remove();
-            $('#weapon-image').removeClass('hide');
-        }
-    }
+	// AD REFRESH AND SUCH
+	if ( count % 10 == 0 ) {
+		$('#weapon-image').addClass('hide');
+		$('#ad' + ad).removeClass('hide');
+		$('#weapon-name').text('ad');
+		return true;
+	}
+	if ( count % 10 == 1 ) {
+		$('#ad' + ad).addClass('hide');
+		$('#weapon-image').removeClass('hide');
+		ad += 1;
+		// AD REFRESH
+		if ( count % 30 == 1 ) googletag.pubads().refresh();
+		//if ( count > 30 ) googletag.pubads().refresh([ad_id + ad]);
+	}
+
     var weapon_id = Math.floor(Math.random() * 14);
     var weapon_img = 'img/weapon-' + weapon_id + '.png';
     var new_name = random(prefix)+' '+random(suffix);
