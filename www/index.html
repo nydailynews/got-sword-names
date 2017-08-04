@@ -123,7 +123,8 @@
 
         <div class="button-box">
             <button id="generate-name" onClick="generate_weapon();">New Weapon</button>
-            <button id="save-weapon" onClick="save_weapon();">Save Weapon</button>
+            <button id="save-weapon" onClick="save_weapon();">Save</button>
+            <button id="share-weapon" onClick="share_weapon();">Share</button>
         </div>
         <script>
             if ( is_mobile ) $('#save-weapon').addClass('hide');
@@ -252,6 +253,14 @@ function random(list) {
 function new_weapon() {
     var x = Math.floor(Math.random() * 14);
     return 'img/weapon-'+ x + '.png';
+}
+
+function share_weapon() {
+    // Edit the URL to make the image permalinkable
+}
+
+function load_weapon() {
+    // When a permalink is loaded, return the blade
 }
 
 var count = 0;
