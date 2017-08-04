@@ -290,6 +290,7 @@ function load_weapon(hash, data) {
     var pieces = hash.substr(1).split('_');
     var names = pieces[0].split('-');
     var weapon_id = pieces[1];
+    $('#weapon-image').removeClass('initial');
     $('#weapon-image').attr('src','img/weapon-'+ weapon_id + '.png');
     // Make sure the name is in our list of names
     var len = data.length;
