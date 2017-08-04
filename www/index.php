@@ -334,7 +334,7 @@ function generate_weapon() {
             $('#weapon-image').removeClass('hide');
         }
     }
-    var weapon_id = Math.floor(Math.random() * 14);
+    var weapon_id = Math.floor(Math.random() * 16);
     var weapon_img = 'img/weapon-' + weapon_id + '.png';
     var new_name = random(prefix)+' '+random(suffix);
     $('#weapon-image').attr('src', weapon_img);

@@ -9,6 +9,10 @@ li {
     list-style: none
 }
 
+#rh-subnav {
+    display: none;
+}
+
 h1 {
     font: normal 13px 'Press Start 2P', cursive;
     color: black;
@@ -62,7 +66,7 @@ article {
     margin: auto;
 }
 
-a {
+.main-text a {
     color: white;
     text-decoration: underline;
 }
@@ -140,9 +144,7 @@ article p.byline {
     padding-top: 5px;
     margin-bottom: 0;
 }
-#rh-subnav {
-    display: none;
-}
+
 
 /* HANDHELD-SPECIFIC */
 @media only screen and ( min-width: 220px ) and ( max-width:727px ) {
