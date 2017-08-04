@@ -135,7 +135,7 @@ endif;
         <div class="button-box">
             <button id="generate-name" onClick="generate_weapon();">New Weapon</button>
             <button id="save-weapon" disabled="true" onClick="save_weapon();">Save</button>
-            <button id="share-weapon" disabled="true" onClick="share_weapon();">Share</button>
+            <button id="share-weapon" class="hide" disabled="true" onClick="share_weapon();">Share</button>
         </div>
         <div id="sword-share"></div>
         <script>
@@ -267,11 +267,6 @@ function random(list) {
     return list[i];
 }
 
-function new_weapon() {
-    var x = Math.floor(Math.random() * 14);
-    return 'img/weapon-'+ x + '.png';
-}
-
 function share_weapon() {
     // Edit the URL to make the image permalinkable
     var blade_name = $('#weapon-name').text();
@@ -339,9 +334,12 @@ function generate_weapon() {
             $('#weapon-image').removeClass('hide');
         }
     }
+    var weapon_id = Math.floor(Math.random() * 14);
+    var weapon_img = 'img/weapon-' + weapon_id + '.png';
     var new_name = random(prefix)+' '+random(suffix);
-    $('#weapon-image').attr('src',new_weapon());
+    $('#weapon-image').attr('src', weapon_img);
     $('#weapon-image').attr('alt',new_name);
+	window.history.replaceState('', '', document.location.origin + document.location.pathname + '#' + convert_to_slug(new_name) + '_' + weapon_id);
     $('#weapon-name').text(new_name);
 }
 function save_weapon() {
