@@ -31,8 +31,8 @@
     <meta name="twitter:url" content="http://interactive.nydailynews.com/project/choose-your-weapon/" />
 
     <!-- THUMBNAIL IMAGE-->
-    <meta property="og:image" content="img/share.png" />
-    <meta name="twitter:image" content="img/share.png" />
+    <meta property="og:image" content="http://interactive.nydailynews.com/project/choose-your-weapon/img/share.png" />
+    <meta name="twitter:image" content="http://interactive.nydailynews.com/project/choose-your-weapon/img/share.png" />
     <meta name="twitter:image:alt" content="A photo of Joffrey Lannister from Game of Thrones (when he was alive)" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="512" />
@@ -44,7 +44,7 @@
             "@type": "NewsArticle",
             "headline": "Game of Thrones Weapon Name Generator",
             "url": "http://interactive.nydailynews.com/project/choose-your-weapon/",
-            "thumbnailUrl": "static/img/share.png",
+            "thumbnailUrl": "http://interactive.nydailynews.com/project/choose-your-weapon/img/share.png",
             "dateCreated": "2017-08-04T09:00:00Z",
             "articleSection": "Interactive",
             "creator": ["Kelli R. Parker", "Interactive Project","Jenna Bouchard"],
@@ -118,14 +118,16 @@
         <div class="main-text">
             <h1>GoT <span>Game of Thrones</span> Weapon Generator</h1>
             <h2>Choose your weapon</h2>
-            <p>From Widow's Wail to Oathkeeper, the <a href="http://www.nydailynews.com/tags/game-of-thrones">Game of Thrones</a> universe knows how to name a fear-inspiring weapon. Click below to create a noble moniker for your fictional armaments.</p>
+            <p>From Widow's Wail to Oathkeeper, the <a href="http://www.nydailynews.com/tags/game-of-thrones">Game of Thrones</a> universe knows how to name a fear-inspiring weapon. Click below to create a noble moniker for your fictional blade.</p>
         </div>
 
         <div class="button-box">
             <button id="generate-name" onClick="generate_weapon();">New Weapon</button>
             <button id="save-weapon" onClick="save_weapon();">Save Weapon</button>
         </div>
-
+        <script>
+            if ( is_mobile ) $('#save-weapon').addClass('hide');
+        </script>
         <div id="weapon" class="action-box">
             <div class="weapon">
                 <div class="ad center hide" id="ad1">
@@ -262,7 +264,7 @@ function generate_weapon() {
             ad += 1;
             $('#weapon-image').addClass('hide');
             $('#ad' + ad).removeClass('hide');
-            $('#weapon-name').text('ad ' + random(suffix));
+            $('#weapon-name').text('ad');
             return true;
         }
         if ( count % 10 == 1 ) {
@@ -298,7 +300,7 @@ $.getJSON('data.json', function(name_data) {
 </script>
      <ul class="hide ra-share" id="ra-share-top">
         <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://interactive.nydailynews.com/project/choose-your-weapon/">facebook</a> </li>
-        <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=Make your own sword name with our Game of Thrones sword name generator&url=http://nydn.us/blades&via=nydailynews&related=nydni,kelliparker">Tweet</a></li>
+        <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=Make your own sword name with our Game of Thrones sword name generator&url=http://nydn.us/blades&related=nydni,kelliparker">Tweet</a></li>
         <li class="ra-share-e"> <a href="mailto:?subject=Game of Thrones sword name generator&body=http://interactive.nydailynews.com/project/choose-your-weapon/">email</a> </li>
     </ul>
 </body>
