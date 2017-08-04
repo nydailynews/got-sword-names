@@ -170,7 +170,7 @@ endif;
             </div>
         </div>
 
-        <div style="margin: 20px;">
+        <div style="margin: 10px;">
             <div id="audio">
                 <button onClick="play_audio();">Play Audio</button>
             </div>

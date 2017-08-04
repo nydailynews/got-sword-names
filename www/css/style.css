@@ -100,9 +100,9 @@ a {
 
 #weapon-name {
     font: normal 30px 'Press Start 2P', cursive;
+    line-height: 35px;
     color: lightgray;
     text-transform: uppercase;
-    margin-top: 15px;
     cursor: pointer;
 }
 
@@ -115,7 +115,6 @@ button {
     font: normal 16px 'Press Start 2P', cursive;
     color: #aaff4d;
     margin: 10px;
-    margin-bottom: 30px;
     cursor: pointer;
 }
 
@@ -143,16 +142,35 @@ article p.byline {
 
 /* HANDHELD-SPECIFIC */
 @media only screen and ( min-width: 220px ) and ( max-width:727px ) {
+
+    .main-text {
+        padding: 25px;
+    }
     .main-text p {
+        font-size: 14px;
+        line-height: 22px;
         max-width: 95%;
     }
     .action-box {
-        width: 100%;
+        width: 95%;
         height: 250px;
     }
     article {
         width: 100%;
         height: auto;
+    }
+    h1 {
+        margin-left: -14px;
+    }
+    h2 {
+        font-size: 30px;
+        margin-top: 25px;
+    }
+    .button-box {
+        margin-top: -20px;
+    }
+    #weapon-name {
+        font-size: 20px;
     }
 }
 /* TABLET-SPECIFIC */
