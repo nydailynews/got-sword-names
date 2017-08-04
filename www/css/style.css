@@ -145,6 +145,9 @@ article p.byline {
     margin-bottom: 0;
 }
 
+#rh-subnav {
+    display: none!important;
+}
 
 /* HANDHELD-SPECIFIC */
 @media only screen and ( min-width: 220px ) and ( max-width:727px ) {

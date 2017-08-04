@@ -111,7 +111,7 @@ endif;
     <script src="http://interactive.nydailynews.com/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/rh.css">
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/ra.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css?v2">
+    <link rel="stylesheet" type="text/css" href="css/style.css?v3">
 
     <script>var nav_params = {section: 'projects', url: 'http://interactive.nydailynews.com/project/'};</script>
     <script src="http://interactive.nydailynews.com/library/vendor-nav/vendor-include.js" defer></script>
@@ -177,7 +177,7 @@ endif;
 
         <div style="margin: 10px;">
             <div id="audio">
-                <button onClick="play_audio();">Play Audio</button>
+                <button onClick="play_audio();">Play 8-bit Theme Song</button>
 				<audio id="player" class="hide" controls="controls">
             </div>
         <p class="byline">Interactive by Jenna Bouchard and Kelli R. Parker • Music by<a href="https://youtu.be/qyCCfJwFh8I" style="color: #aaff4d;" target="_blank"> Floating Point</a></p>
@@ -219,12 +219,18 @@ endif;
 <script src="http://interactive.nydailynews.com/js/html2canvas/0.4.1/html2canvas.js"></script>
 
 <script>
-function convert_to_slug(text){
+function convert_to_slug(text) {
     return text
         .toLowerCase()
         .replace(/[^\w ]+/g,'')
         .replace(/ +/g,'-');
 }
+
+function save_weapon() {
+    $('#url').removeClass('hide');
+    save_image();
+}
+
 function save_image()
 {
     html2canvas($('#weapon'), {
@@ -267,6 +273,7 @@ function random(list) {
 }
 
 function share_weapon() {
+	// PERMALINK
     // Edit the URL to make the image permalinkable
     var blade_name = $('#weapon-name').text();
     var blade_id = $('#weapon-image').attr('src').replace('img/weapon-','').replace('.png','');
@@ -284,6 +291,7 @@ function share_weapon() {
 
 }
 function load_weapon(hash, data) {
+	// PERMALINK
     // When a permalink is loaded, return the blade
 	window.history.replaceState('', '', document.location.origin + document.location.pathname);
     var pieces = hash.substr(1).split('_');
@@ -291,6 +299,7 @@ function load_weapon(hash, data) {
     var weapon_id = pieces[1];
     $('#weapon-image').removeClass('initial');
     $('#weapon-image').attr('src','img/weapon-'+ weapon_id + '.png');
+
     // Make sure the name is in our list of names
     var len = data.length;
     var has_name = 0;
@@ -313,27 +322,38 @@ function load_weapon(hash, data) {
     }
 
 var count = 0;
-var ad = 0;
+var ad = 1;
+var ad_id = 'div-gpt-ad-1423507761396-';
 function generate_weapon() {
-    if ( count == 0 ){
+    if ( count == 0 ) {
         $('#weapon-image').removeClass('initial');
         document.getElementById("save-weapon").disabled = false;
         document.getElementById("share-weapon").disabled = false;
     } 
     count += 1;
-    if ( count < 35 ) {
-        if ( count % 10 == 0 ) {
-            ad += 1;
-            $('#weapon-image').addClass('hide');
-            $('#ad' + ad).removeClass('hide');
-            $('#weapon-name').text('ad');
-            return true;
-        }
-        if ( count % 10 == 1 ) {
-            $('#ad' + ad).remove();
-            $('#weapon-image').removeClass('hide');
-        }
-    }
+
+	// AD REFRESH AND SUCH
+	if ( count % 10 == 0 ) {
+		$('#weapon-image').addClass('hide');
+		$('#ad' + ad).removeClass('hide');
+		$('#weapon-name').text('ad');
+		return true;
+	}
+	if ( count > 1 && count % 10 == 1 ) {
+		$('#ad' + ad).addClass('hide');
+		$('#weapon-image').removeClass('hide');
+		ad += 1;
+		if ( ad > 3 ) ad = 1;
+		// AD REFRESH
+		if ( count % 30 == 1 ) googletag.pubads().refresh();
+	}
+	if ( count % 20 == 0 ) {
+		src = '//assets.adobedtm.com/4fc527d6fda921c80e462d11a29deae2e4cf7514/satelliteLib-c91fdc6ac624c6cbcd50250f79786de339793801.js'
+        var s = document.createElement('script');
+        s.setAttribute('src', src);
+        document.getElementsByTagName('head')[0].appendChild(s);
+	}
+
     var weapon_id = Math.floor(Math.random() * 16);
     var weapon_img = 'img/weapon-' + weapon_id + '.png';
     var new_name = random(prefix)+' '+random(suffix);
@@ -342,24 +362,15 @@ function generate_weapon() {
 	window.history.replaceState('', '', document.location.origin + document.location.pathname + '#' + convert_to_slug(new_name) + '_' + weapon_id);
     $('#weapon-name').text(new_name);
 }
-function save_weapon() {
-    $('#url').removeClass('hide');
-    save_image();
-}
 
 $.getJSON('data.json', function(name_data) {
     prefix = names(name_data, 'prefix');
     suffix = names(name_data, 'suffix');
     hsh = document.location.hash.substr(1);
-    $('#weapon-image, #weapon-name').click(function() {
-        generate_weapon();
-    });
+    $('#weapon-image, #weapon-name').click(function() { generate_weapon(); });
 
     // In case we're back here via save button
     if ( document.referrer == document.location.href ) $('#generate-name').trigger('click');
-
-    //$('#rh-subnav').html($('#ra-share-top'));   
-    //$('#ra-share-top').removeClass('hide');
 
     // PERMALINK
     if ( document.location.hash !== '' ) load_weapon(document.location.hash, name_data);
