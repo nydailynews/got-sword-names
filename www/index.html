@@ -235,7 +235,7 @@ $.getJSON('data.json', function(name_data) {
     prefix = names(name_data, 'prefix');
     suffix = names(name_data, 'suffix');
     hsh = document.location.hash.substr(1);
-    $('#generate-name').click(function() {
+    $('#generate-name, #weapon-image').click(function() {
         $('#weapon-image').removeClass('initial');
         $('#weapon-image').attr('src',new_weapon());
         $('#weapon-name').text(random(prefix)+' '+random(suffix));
