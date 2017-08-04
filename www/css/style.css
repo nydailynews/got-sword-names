@@ -159,9 +159,6 @@ article p.byline {
         width: 100%;
         height: auto;
     }
-    h1 {
-        margin-left: -14px;
-    }
     h2 {
         font-size: 30px;
         margin-top: 25px;
@@ -175,6 +172,21 @@ article p.byline {
 }
 /* TABLET-SPECIFIC */
 @media only screen and ( min-width: 728px ) and (max-width:1023px) {
+    .main-text {
+        padding: 50px;
+    }
+    .main-text p {
+        font-size: 15px;
+        line-height: 22px;
+        max-width: 95%;
+    }
+    h2 {
+        font-size: 37px;
+    }
+    .button-box {
+        margin-top: -25px;
+        margin-bottom: 25px;
+    }
 }
 /* HANDHELD & TABLET */
 @media only screen and ( min-width: 220px ) and (max-width:1023px) {

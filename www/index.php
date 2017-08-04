@@ -180,8 +180,7 @@ endif;
             Your browser does not support the audio element.
         </audio>
 -->
-        <p class="byline">Interactive by Jenna Bouchard and Kelli R. Parker</p>
-        <p class="byline">Music by<a href="https://youtu.be/qyCCfJwFh8I" style="color: #aaff4d;" target="_blank"> Floating Point</a></p>
+        <p class="byline">Interactive by Jenna Bouchard and Kelli R. Parker • Music by<a href="https://youtu.be/qyCCfJwFh8I" style="color: #aaff4d;" target="_blank"> Floating Point</a></p>
         </div>
 
         <div class="ad center">
@@ -372,6 +371,7 @@ $.getJSON('data.json', function(name_data) {
 function play_audio() {
     var music = document.createElement('audio');
     music.setAttribute('controls', 'controls');
+    music.setAttribute('autoplay', 'autoplay');
     music.src = 'game-of-thrones-8-bit.mp3';
     music.type = 'audio/mpeg';
     $('#audio').html(music);
