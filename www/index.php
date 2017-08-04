@@ -111,7 +111,7 @@ endif;
     <script src="http://interactive.nydailynews.com/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/rh.css">
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/ra.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css?v1">
+    <link rel="stylesheet" type="text/css" href="css/style.css?v2">
 
     <script>var nav_params = {section: 'projects', url: 'http://interactive.nydailynews.com/project/'};</script>
     <script src="http://interactive.nydailynews.com/library/vendor-nav/vendor-include.js" defer></script>
@@ -135,7 +135,7 @@ endif;
         <div class="button-box">
             <button id="generate-name" onClick="generate_weapon();">New Weapon</button>
             <button id="save-weapon" disabled="true" onClick="save_weapon();">Save</button>
-            <button id="share-weapon" disabled="true" onClick="share_weapon();">Share</button>
+            <button id="share-weapon" class="hide" disabled="true" onClick="share_weapon();">Share</button>
         </div>
         <div id="sword-share"></div>
         <script>
@@ -266,11 +266,6 @@ function random(list) {
     return list[i];
 }
 
-function new_weapon() {
-    var x = Math.floor(Math.random() * 14);
-    return 'img/weapon-'+ x + '.png';
-}
-
 function share_weapon() {
     // Edit the URL to make the image permalinkable
     var blade_name = $('#weapon-name').text();
@@ -290,10 +285,11 @@ function share_weapon() {
 }
 function load_weapon(hash, data) {
     // When a permalink is loaded, return the blade
-    document.location.href = document.location.origin + document.location.pathname;
+	window.history.replaceState('', '', document.location.origin + document.location.pathname);
     var pieces = hash.substr(1).split('_');
     var names = pieces[0].split('-');
     var weapon_id = pieces[1];
+    $('#weapon-image').removeClass('initial');
     $('#weapon-image').attr('src','img/weapon-'+ weapon_id + '.png');
     // Make sure the name is in our list of names
     var len = data.length;
@@ -338,9 +334,12 @@ function generate_weapon() {
             $('#weapon-image').removeClass('hide');
         }
     }
+    var weapon_id = Math.floor(Math.random() * 14);
+    var weapon_img = 'img/weapon-' + weapon_id + '.png';
     var new_name = random(prefix)+' '+random(suffix);
-    $('#weapon-image').attr('src',new_weapon());
+    $('#weapon-image').attr('src', weapon_img);
     $('#weapon-image').attr('alt',new_name);
+	window.history.replaceState('', '', document.location.origin + document.location.pathname + '#' + convert_to_slug(new_name) + '_' + weapon_id);
     $('#weapon-name').text(new_name);
 }
 function save_weapon() {
@@ -364,7 +363,7 @@ $.getJSON('data.json', function(name_data) {
 
     // PERMALINK
     if ( document.location.hash !== '' ) load_weapon(document.location.hash, name_data);
-    if ( document.location.search !== '' ) load_weapon(document.location.search, name_data);
+    if ( document.location.search !== '' ) load_weapon(document.location.search.replace('sword=',''), name_data);
 
 });
 
