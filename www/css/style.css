@@ -62,7 +62,7 @@ article {
     margin: auto;
 }
 
-a {
+.main-text a {
     color: white;
     text-decoration: underline;
 }
@@ -141,7 +141,7 @@ article p.byline {
     margin-bottom: 0;
 }
 #rh-subnav {
-    display: none;
+    display: none!important;
 }
 
 /* HANDHELD-SPECIFIC */

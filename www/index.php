@@ -111,7 +111,7 @@ endif;
     <script src="http://interactive.nydailynews.com/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/rh.css">
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/ra.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css?v2">
+    <link rel="stylesheet" type="text/css" href="css/style.css?v3">
 
     <script>var nav_params = {section: 'projects', url: 'http://interactive.nydailynews.com/project/'};</script>
     <script src="http://interactive.nydailynews.com/library/vendor-nav/vendor-include.js" defer></script>
@@ -315,7 +315,7 @@ function load_weapon(hash, data) {
 var count = 0;
 var ad = 0;
 function generate_weapon() {
-    if ( count == 0 ){
+    if ( count == 0 ) {
         $('#weapon-image').removeClass('initial');
         document.getElementById("save-weapon").disabled = false;
         document.getElementById("share-weapon").disabled = false;
@@ -351,15 +351,10 @@ $.getJSON('data.json', function(name_data) {
     prefix = names(name_data, 'prefix');
     suffix = names(name_data, 'suffix');
     hsh = document.location.hash.substr(1);
-    $('#weapon-image, #weapon-name').click(function() {
-        generate_weapon();
-    });
+    $('#weapon-image, #weapon-name').click(function() { generate_weapon(); });
 
     // In case we're back here via save button
     if ( document.referrer == document.location.href ) $('#generate-name').trigger('click');
-
-    //$('#rh-subnav').html($('#ra-share-top'));   
-    //$('#ra-share-top').removeClass('hide');
 
     // PERMALINK
     if ( document.location.hash !== '' ) load_weapon(document.location.hash, name_data);
