@@ -100,7 +100,7 @@
     <script src="http://interactive.nydailynews.com/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/rh.css">
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/ra.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css?v1">
 
     <script>var nav_params = {section: 'projects', url: 'http://interactive.nydailynews.com/project/'};</script>
     <script src="http://interactive.nydailynews.com/library/vendor-nav/vendor-include.js" defer></script>
@@ -267,8 +267,8 @@ function share_weapon() {
     var blade_id = $('#weapon-image').attr('src').replace('img/weapon-','').replace('.png','');
     var slug = convert_to_slug(blade_name);
     document.location.hash = '#' + slug + '_' + blade_id;
-    var url = document.location.href;
-    var tweet_text = "I made a blade named " + blade_name + " with the Game of Thrones sword generator.";
+    var url = document.location.href.replace('#','?');
+    var tweet_text = "I made a blade named " + blade_name + " with the #GoT sword generator:";
     var markup = "<h3>Share your blade</h3>\n\
 <a class=\"twitter-share\" href='http://twitter.com/share?url=" + url + "&text=" + tweet_text + "&via=nydailynews' target='_blank'>\n\
 <button class='share social_icon_box twitter_button'>Share On Twitter</button></a>&nbsp;\n\
@@ -278,8 +278,33 @@ function share_weapon() {
     $('#sword-share').html(markup);
 
 }
-function load_weapon(hash) {
+function load_weapon(hash, data) {
     // When a permalink is loaded, return the blade
+    document.location.href = document.location.origin + document.location.pathname;
+    var pieces = hash.substr(1).split('_');
+    var names = pieces[0].split('-');
+    var weapon_id = pieces[1];
+    $('#weapon-image').attr('src','img/weapon-'+ weapon_id + '.png');
+    // Make sure the name is in our list of names
+    var len = data.length;
+    var has_name = 0;
+    var prefix = names[0];
+    for (var i = 0; i < len; i++) {        
+        if ( data[i]['name'] === prefix ) has_name = 1;
+    }
+    if ( has_name === 0 ) prefix = names(data, 'prefix');
+
+    has_name = 0;
+    var suffix = names.slice(1).join(' ');
+    for (var i = 0; i < len; i++) {        
+        if ( data[i]['name'] === suffix ) has_name = 1;
+    }
+    if ( has_name === 0 ) suffix = names(data, 'suffix');
+    
+    var new_name = prefix + ' ' + suffix;
+    $('#weapon-image').attr('alt',new_name);
+    $('#weapon-name').text(new_name);
+    
 }
 
 var count = 0;
@@ -325,7 +350,8 @@ $.getJSON('data.json', function(name_data) {
     $('#ra-share-top').removeClass('hide');
 
     // PERMALINK
-    if ( document.location.hash !== '' ) load_weapon(document.location.hash);
+    if ( document.location.hash !== '' ) load_weapon(document.location.hash, name_data);
+    if ( document.location.search !== '' ) load_weapon(document.location.search, name_data);
 
 });
 
