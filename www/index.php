@@ -1,4 +1,15 @@
-<!DOCTYPE HTML>
+<?php
+$share_img = 'share';
+$share_height = 767;
+$share_width = 512;
+if ( count($_GET) > 0 ):
+	$pieces = explode('_', htmlspecialchars($_GET['sword']));
+	$sword_id = intval(array_slice($pieces, -1);
+	$share_img = 'weapon-' . $sword_id;
+	$share_height = 600;
+	$share_width = 300;
+endif;
+?><!DOCTYPE HTML>
 <html lang="en">
 <head>
     <title>Game of Thrones Weapon Name Generator</title>
@@ -22,8 +33,8 @@
     <meta name="twitter:description" content="Generate a Game of Thrones-style blade-name for your fictional digital weapon." />
 
     <!-- KEYWORD -->
-    <meta name="keywords" content="Game of Thrones,sword name generator,axe name generator,swords,axes,things,stuff" />
-    <meta name="news_keywords" content="Game of Thrones,sword name generator,axe name generator,swords,axes,things,stuff" />
+    <meta name="keywords" content="Game of Thrones,sword name generator,axe name generator,swords,axes" />
+    <meta name="news_keywords" content="Game of Thrones,sword name generator,axe name generator,swords,axes" />
 
     <!-- LINK -->
     <link rel="canonical" href="http://interactive.nydailynews.com/project/choose-your-weapon/">
@@ -31,11 +42,11 @@
     <meta name="twitter:url" content="http://interactive.nydailynews.com/project/choose-your-weapon/" />
 
     <!-- THUMBNAIL IMAGE-->
-    <meta property="og:image" content="http://interactive.nydailynews.com/project/choose-your-weapon/img/share.png" />
-    <meta name="twitter:image" content="http://interactive.nydailynews.com/project/choose-your-weapon/img/share.png" />
+    <meta property="og:image" content="http://interactive.nydailynews.com/project/choose-your-weapon/img/<?php echo $share_img; ?>.png" />
+    <meta name="twitter:image" content="http://interactive.nydailynews.com/project/choose-your-weapon/img/<?php echo $share_img; ?>.png" />
     <meta name="twitter:image:alt" content="A photo of Joffrey Lannister from Game of Thrones (when he was alive)" />
-    <meta property="og:image:width" content="1024" />
-    <meta property="og:image:height" content="512" />
+    <meta property="og:image:width" content="<?php echo $share_width; ?>" />
+    <meta property="og:image:height" content="<?php echo $share_height; ?>" />
 
     <!-- PARSELY -->
     <script type="application/ld+json">
@@ -267,7 +278,7 @@ function share_weapon() {
     var blade_id = $('#weapon-image').attr('src').replace('img/weapon-','').replace('.png','');
     var slug = convert_to_slug(blade_name);
     document.location.hash = '#' + slug + '_' + blade_id;
-    var url = document.location.href.replace('#','?');
+    var url = document.location.href.replace('#','?sword=');
     var tweet_text = "I made a blade named " + blade_name + " with the #GoT sword generator:";
     var markup = "<h3>Share your blade</h3>\n\
 <a class=\"twitter-share\" href='http://twitter.com/share?url=" + url + "&text=" + tweet_text + "&via=nydailynews' target='_blank'>\n\
