@@ -219,12 +219,18 @@ endif;
 <script src="http://interactive.nydailynews.com/js/html2canvas/0.4.1/html2canvas.js"></script>
 
 <script>
-function convert_to_slug(text){
+function convert_to_slug(text) {
     return text
         .toLowerCase()
         .replace(/[^\w ]+/g,'')
         .replace(/ +/g,'-');
 }
+
+function save_weapon() {
+    $('#url').removeClass('hide');
+    save_image();
+}
+
 function save_image()
 {
     html2canvas($('#weapon'), {
@@ -267,6 +273,7 @@ function random(list) {
 }
 
 function share_weapon() {
+	// PERMALINK
     // Edit the URL to make the image permalinkable
     var blade_name = $('#weapon-name').text();
     var blade_id = $('#weapon-image').attr('src').replace('img/weapon-','').replace('.png','');
@@ -284,6 +291,7 @@ function share_weapon() {
 
 }
 function load_weapon(hash, data) {
+	// PERMALINK
     // When a permalink is loaded, return the blade
 	window.history.replaceState('', '', document.location.origin + document.location.pathname);
     var pieces = hash.substr(1).split('_');
@@ -291,6 +299,7 @@ function load_weapon(hash, data) {
     var weapon_id = pieces[1];
     $('#weapon-image').removeClass('initial');
     $('#weapon-image').attr('src','img/weapon-'+ weapon_id + '.png');
+
     // Make sure the name is in our list of names
     var len = data.length;
     var has_name = 0;
@@ -341,10 +350,6 @@ function generate_weapon() {
     $('#weapon-image').attr('alt',new_name);
 	window.history.replaceState('', '', document.location.origin + document.location.pathname + '#' + convert_to_slug(new_name) + '_' + weapon_id);
     $('#weapon-name').text(new_name);
-}
-function save_weapon() {
-    $('#url').removeClass('hide');
-    save_image();
 }
 
 $.getJSON('data.json', function(name_data) {
