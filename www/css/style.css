@@ -27,7 +27,7 @@ h2 {
     text-transform: uppercase;
     font: normal 50px 'Press Start 2P', cursive;
     text-align: center;
-    margin: 50px 0 20px 0;
+    margin: 40px 0 20px 0;
 }
 
 h3 {
@@ -51,7 +51,7 @@ article {
 .main-text {
     width: 100%;
     text-align: center;
-    padding: 45px;
+    padding: 30px 0 45px;
 }
 
 .main-text p {
@@ -138,6 +138,10 @@ article p.byline {
 
 #ra-share-top {
     padding-top: 5px;
+    margin-bottom: 0;
+}
+#rh-subnav {
+    display: none;
 }
 
 /* HANDHELD-SPECIFIC */
