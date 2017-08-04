@@ -17,9 +17,9 @@
     <meta name="twitter:title" content='Game of Thrones Weapon Name Generator' />
 
     <!-- DESCRIPTION -->
-    <meta name="description" content="Generate a Game of Thrones-style blade-name for your fictional weapon." />
-    <meta property="og:description" content="Generate a Game of Thrones-style blade-name for your fictional weapon." />
-    <meta name="twitter:description" content="Generate a Game of Thrones-style blade-name for your fictional weapon." />
+    <meta name="description" content="Generate a Game of Thrones-style blade-name for your fictional digital weapon." />
+    <meta property="og:description" content="Generate a Game of Thrones-style blade-name for your fictional digital weapon." />
+    <meta name="twitter:description" content="Generate a Game of Thrones-style blade-name for your fictional digital weapon." />
 
     <!-- KEYWORD -->
     <meta name="keywords" content="Game of Thrones,sword name generator,axe name generator,swords,axes,things,stuff" />
@@ -33,7 +33,7 @@
     <!-- THUMBNAIL IMAGE-->
     <meta property="og:image" content="img/share.png" />
     <meta name="twitter:image" content="img/share.png" />
-    <meta name="twitter:image:alt" content="A description of the twitter image" />
+    <meta name="twitter:image:alt" content="A photo of Joffrey Lannister from Game of Thrones (when he was alive)" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="512" />
 
@@ -262,14 +262,18 @@ function generate_weapon() {
             ad += 1;
             $('#weapon-image').addClass('hide');
             $('#ad' + ad).removeClass('hide');
+            $('#weapon-name').text('ad ' + random(suffix));
+            return true;
         }
         if ( count % 10 == 1 ) {
             $('#ad' + ad).remove();
             $('#weapon-image').removeClass('hide');
         }
     }
+    var new_name = random(prefix)+' '+random(suffix);
     $('#weapon-image').attr('src',new_weapon());
-    $('#weapon-name').text(random(prefix)+' '+random(suffix));
+    $('#weapon-image').attr('alt',new_name);
+    $('#weapon-name').text(new_name);
 }
 function save_weapon() {
     $('#url').removeClass('hide');
