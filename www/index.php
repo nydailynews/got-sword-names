@@ -365,7 +365,7 @@ $.getJSON('data.json', function(name_data) {
 function play_audio() {
     var music = document.getElementById('player');
     //music.setAttribute('autoplay', 'autoplay');
-    music.src = 'game-of-thrones-8-bit.mp3';
+    music.src = 'http://audio-download.ngfiles.com/476000/476918_Game-of-Thrones-8-bit.mp3';
     music.type = 'audio/mpeg';
     $('#player').removeClass('hide');
     $('#audio button').remove();
