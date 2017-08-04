@@ -329,7 +329,13 @@ $.getJSON('data.json', function(name_data) {
 
 });
 
-getElementById(audio).play();
+function play_audio() {
+    var music = document.createElement('audio');
+    music.setAttribute('controls', 'controls');
+    music.src = 'game-of-thrones-8-bit.mp3';
+    music.type = 'audio/mpeg';
+    $('#audio').html(music);
+}
 
 
 </script>
