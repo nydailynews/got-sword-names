@@ -122,8 +122,8 @@
         </div>
 
         <div class="button-box">
-            <button id="generate-name">New Weapon</button>
-            <button id="save-weapon">Save Weapon</button>
+            <button id="generate-name" onClick="generate_weapon();">New Weapon</button>
+            <button id="save-weapon" onClick="save_weapon();">Save Weapon</button>
         </div>
 
         <div id="weapon" class="action-box">
@@ -254,30 +254,34 @@ function new_weapon() {
 
 var count = 0;
 var ad = 0;
+function generate_weapon() {
+    if ( count == 0 ) $('#weapon-image').removeClass('initial');
+    count += 1;
+    if ( count < 35 ) {
+        if ( count % 10 == 0 ) {
+            ad += 1;
+            $('#weapon-image').addClass('hide');
+            $('#ad' + ad).removeClass('hide');
+        }
+        if ( count % 10 == 1 ) {
+            $('#ad' + ad).remove();
+            $('#weapon-image').removeClass('hide');
+        }
+    }
+    $('#weapon-image').attr('src',new_weapon());
+    $('#weapon-name').text(random(prefix)+' '+random(suffix));
+}
+function save_weapon() {
+    $('#url').removeClass('hide');
+    save_image();
+}
+
 $.getJSON('data.json', function(name_data) {
     prefix = names(name_data, 'prefix');
     suffix = names(name_data, 'suffix');
     hsh = document.location.hash.substr(1);
-    $('#generate-name, #weapon-image, #weapon-name').click(function() {
-        if ( count == 0 ) $('#weapon-image').removeClass('initial');
-        count += 1;
-        if ( count < 35 ) {
-            if ( count % 10 == 0 ) {
-                ad += 1;
-                $('#weapon-image').addClass('hide');
-                $('#ad' + ad).removeClass('hide');
-            }
-            if ( count % 10 == 1 ) {
-                $('#ad' + ad).remove();
-                $('#weapon-image').removeClass('hide');
-            }
-        }
-        $('#weapon-image').attr('src',new_weapon());
-        $('#weapon-name').text(random(prefix)+' '+random(suffix));
-    });
-    $('#save-weapon').click(function(){
-        $('#url').removeClass('hide');
-        save_image();
+    $('#weapon-image, #weapon-name').click(function() {
+        generate_weapon();
     });
 
     // In case we're back here via save button

@@ -108,6 +108,7 @@ button {
     color: #aaff4d;
     margin: 10px;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 #url {
