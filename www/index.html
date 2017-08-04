@@ -163,7 +163,6 @@
             <div id="audio">
                 <button onClick="play_audio();">Play Audio</button>
             </div>
-
 <!--
         <audio controls="controls">
             <source src="game-of-thrones-8-bit.mp3" type="audio/mpeg">
@@ -329,6 +328,9 @@ $.getJSON('data.json', function(name_data) {
     if ( document.location.hash !== '' ) load_weapon(document.location.hash);
 
 });
+
+getElementById(audio).play();
+
 
 </script>
      <ul class="hide ra-share" id="ra-share-top">
