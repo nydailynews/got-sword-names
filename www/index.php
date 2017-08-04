@@ -4,7 +4,7 @@ $share_height = 767;
 $share_width = 512;
 if ( count($_GET) > 0 ):
 	$pieces = explode('_', htmlspecialchars($_GET['sword']));
-	$sword_id = intval(array_slice($pieces, -1);
+	$sword_id = intval(array_slice($pieces, -1));
 	$share_img = 'weapon-' . $sword_id;
 	$share_height = 600;
 	$share_width = 300;
