@@ -177,7 +177,7 @@ endif;
 
         <div style="margin: 10px;">
             <div id="audio">
-                <button onClick="play_audio();">Play Audio</button>
+                <button onClick="play_audio();">Play 8-bit Theme Song</button>
 				<audio id="player" class="hide" controls="controls">
             </div>
         <p class="byline">Interactive by Jenna Bouchard and Kelli R. Parker • Music by<a href="https://youtu.be/qyCCfJwFh8I" style="color: #aaff4d;" target="_blank"> Floating Point</a></p>
@@ -345,12 +345,10 @@ function generate_weapon() {
 		if ( ad > 3 ) ad = 1;
 		// AD REFRESH
 		if ( count % 30 == 1 ) googletag.pubads().refresh();
-		//if ( count > 30 ) googletag.pubads().refresh([ad_id + ad]);
 	}
-	if ( count % 15 == 0 ) {
+	if ( count % 20 == 0 ) {
 		src = '//assets.adobedtm.com/4fc527d6fda921c80e462d11a29deae2e4cf7514/satelliteLib-c91fdc6ac624c6cbcd50250f79786de339793801.js'
         var s = document.createElement('script');
-        //s.onload = function() { callback(); }
         s.setAttribute('src', src);
         document.getElementsByTagName('head')[0].appendChild(s);
 	}
