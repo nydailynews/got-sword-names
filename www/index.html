@@ -128,6 +128,27 @@
 
         <div id="weapon" class="action-box">
             <div class="weapon">
+                <div class="ad center hide" id="ad1">
+                    <div id='div-gpt-ad-1423507761396-1'>
+                        <script>
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1423507761396-1'); });
+                        </script>
+                    </div>
+                </div>
+                <div class="ad center hide" id="ad2">
+                    <div id='div-gpt-ad-1423507761396-2'>
+                        <script>
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1423507761396-2'); });
+                        </script>
+                    </div>
+                </div>
+                <div class="ad center hide" id="ad3">
+                    <div id='div-gpt-ad-1423507761396-3'>
+                        <script>
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1423507761396-3'); });
+                        </script>
+                    </div>
+                </div>
                 <img id="weapon-image" src="img/weapon-start.png" class="initial" alt="an image of pixel art weapons">
                 <p id="weapon-name"></p>
                 <p id="url" class="hide">http://nydn.us/blades</p>
@@ -153,27 +174,6 @@
     </article>
 </main>
 
-  <div class="ad center hide" id="ad1">
-    <div id='div-gpt-ad-1423507761396-1'>
-        <script>
-            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1423507761396-1'); });
-        </script>
-    </div>
-  </div>
-  <div class="ad center hide" id="ad2">
-    <div id='div-gpt-ad-1423507761396-2'>
-        <script>
-            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1423507761396-2'); });
-        </script>
-    </div>
-  </div>
-  <div class="ad center hide" id="ad2">
-    <div id='div-gpt-ad-1423507761396-3'>
-        <script>
-            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1423507761396-3'); });
-        </script>
-    </div>
-  </div>
 <!-- CONTENT-END -->
 
 <!-- FOOTER-START -->
@@ -252,12 +252,26 @@ function new_weapon() {
     return 'img/weapon-'+ x + '.png';
 }
 
+var count = 0;
+var ad = 0;
 $.getJSON('data.json', function(name_data) {
     prefix = names(name_data, 'prefix');
     suffix = names(name_data, 'suffix');
     hsh = document.location.hash.substr(1);
-    $('#generate-name, #weapon-image').click(function() {
-        $('#weapon-image').removeClass('initial');
+    $('#generate-name, #weapon-image, #weapon-name').click(function() {
+        if ( count == 0 ) $('#weapon-image').removeClass('initial');
+        count += 1;
+        if ( count < 35 ) {
+            if ( count % 10 == 0 ) {
+                ad += 1;
+                $('#weapon-image').addClass('hide');
+                $('#ad' + ad).removeClass('hide');
+            }
+            if ( count % 10 == 1 ) {
+                $('#ad' + ad).remove();
+                $('#weapon-image').removeClass('hide');
+            }
+        }
         $('#weapon-image').attr('src',new_weapon());
         $('#weapon-name').text(random(prefix)+' '+random(suffix));
     });
