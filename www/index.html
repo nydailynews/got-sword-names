@@ -268,8 +268,8 @@ function share_weapon() {
     var blade_id = $('#weapon-image').attr('src').replace('img/weapon-','').replace('.png','');
     var slug = convert_to_slug(blade_name);
     document.location.hash = '#' + slug + '_' + blade_id;
-    var url = document.location.href;
-    var tweet_text = "I made a blade named " + blade_name + " with the Game of Thrones sword generator:";
+    var url = document.location.href.replace('#','?');
+    var tweet_text = "I made a blade named " + blade_name + " with the #GoT sword generator:";
     var markup = "<h3>Share your blade</h3>\n\
 <a class=\"twitter-share\" href='http://twitter.com/share?url=" + url + "&text=" + tweet_text + "&via=nydailynews' target='_blank'>\n\
 <button class='share social_icon_box twitter_button'>Share On Twitter</button></a>&nbsp;\n\
@@ -281,6 +281,7 @@ function share_weapon() {
 }
 function load_weapon(hash, data) {
     // When a permalink is loaded, return the blade
+    document.location.href = document.location.origin + document.location.pathname;
     var pieces = hash.substr(1).split('_');
     var names = pieces[0].split('-');
     var weapon_id = pieces[1];
@@ -351,6 +352,7 @@ $.getJSON('data.json', function(name_data) {
 
     // PERMALINK
     if ( document.location.hash !== '' ) load_weapon(document.location.hash, name_data);
+    if ( document.location.search !== '' ) load_weapon(document.location.search, name_data);
 
 });
 
