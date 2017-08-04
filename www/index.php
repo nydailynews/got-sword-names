@@ -111,7 +111,7 @@ endif;
     <script src="http://interactive.nydailynews.com/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/rh.css">
     <link rel="stylesheet" type="text/css" href="http://assets.nydailynews.com/nydn/c/ra.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css?v1">
+    <link rel="stylesheet" type="text/css" href="css/style.css?v2">
 
     <script>var nav_params = {section: 'projects', url: 'http://interactive.nydailynews.com/project/'};</script>
     <script src="http://interactive.nydailynews.com/library/vendor-nav/vendor-include.js" defer></script>
