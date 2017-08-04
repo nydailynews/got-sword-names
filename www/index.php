@@ -338,13 +338,21 @@ function generate_weapon() {
 		$('#weapon-name').text('ad');
 		return true;
 	}
-	if ( count % 10 == 1 ) {
+	if ( count > 1 && count % 10 == 1 ) {
 		$('#ad' + ad).addClass('hide');
 		$('#weapon-image').removeClass('hide');
 		ad += 1;
+		if ( ad > 3 ) ad = 1;
 		// AD REFRESH
 		if ( count % 30 == 1 ) googletag.pubads().refresh();
 		//if ( count > 30 ) googletag.pubads().refresh([ad_id + ad]);
+	}
+	if ( count % 15 == 0 ) {
+		src = '//assets.adobedtm.com/4fc527d6fda921c80e462d11a29deae2e4cf7514/satelliteLib-c91fdc6ac624c6cbcd50250f79786de339793801.js'
+        var s = document.createElement('script');
+        //s.onload = function() { callback(); }
+        s.setAttribute('src', src);
+        document.getElementsByTagName('head')[0].appendChild(s);
 	}
 
     var weapon_id = Math.floor(Math.random() * 14);
