@@ -347,11 +347,16 @@ function generate_weapon() {
 		// AD REFRESH
 		if ( count % 30 == 1 ) googletag.pubads().refresh();
 	}
-	if ( count % 20 == 0 ) {
+	if ( count % 15 == 0 ) {
+		PARSELY.beacon.trackPageView({
+			url: document.location.href,
+			urlref: document.location.href,
+			js: 1
+		});
 		src = '//assets.adobedtm.com/4fc527d6fda921c80e462d11a29deae2e4cf7514/satelliteLib-c91fdc6ac624c6cbcd50250f79786de339793801.js'
         var s = document.createElement('script');
         s.setAttribute('src', src);
-        document.getElementsByTagName('head')[0].appendChild(s);
+        //document.getElementsByTagName('head')[0].appendChild(s);
 	}
 
     var weapon_id = Math.floor(Math.random() * 16);
@@ -389,6 +394,10 @@ function play_audio() {
 	music.play();
 }
 
+// PRELOAD IMAGES
+for ( var i = 0; i <= 16; i ++ ) {
+	$('<img/>')[0].src = 'img/weapon-' + i + '.png';
+}
 
 </script>
 </body>
