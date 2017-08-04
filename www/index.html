@@ -126,6 +126,7 @@
             <button id="save-weapon" onClick="save_weapon();">Save</button>
             <button id="share-weapon" onClick="share_weapon();">Share</button>
         </div>
+        <div id="sword-share"></div>
         <script>
             if ( is_mobile ) $('#save-weapon').addClass('hide');
         </script>
@@ -159,10 +160,16 @@
         </div>
 
         <div style="margin: 20px;">
+            <div id="audio">
+                <button onClick="play_audio();">Play Audio</button>
+            </div>
+
+<!--
         <audio controls="controls">
             <source src="game-of-thrones-8-bit.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
+-->
         <p class="byline">Interactive by Jenna Bouchard and Kelli R. Parker</p>
         <p class="byline">Music by<a href="https://youtu.be/qyCCfJwFh8I" style="color: #aaff4d;" target="_blank"> Floating Point</a></p>
         </div>
@@ -257,9 +264,22 @@ function new_weapon() {
 
 function share_weapon() {
     // Edit the URL to make the image permalinkable
-}
+    var blade_name = $('#weapon-name').text();
+    var blade_id = $('#weapon-image').attr('src').replace('img/weapon-','').replace('.png','');
+    var slug = convert_to_slug(blade_name);
+    document.location.hash = '#' + slug + '_' + blade_id;
+    var url = document.location.href;
+    var tweet_text = "I made a blade named " + blade_name + " with the Game of Thrones sword generator.";
+    var markup = "<h3>Share your blade</h3>\n\
+<a class=\"twitter-share\" href='http://twitter.com/share?url=" + url + "&text=" + tweet_text + "&via=nydailynews' target='_blank'>\n\
+<button class='share social_icon_box twitter_button'>Share On Twitter</button></a>&nbsp;\n\
+<a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + url + "' target='_blank'>\n\
+<button class='share social_icon_box facebook_button'>Share On Facebook</button></a>\n\
+</div>";
+    $('#sword-share').html(markup);
 
-function load_weapon() {
+}
+function load_weapon(hash) {
     // When a permalink is loaded, return the blade
 }
 
@@ -304,6 +324,10 @@ $.getJSON('data.json', function(name_data) {
 
     $('#rh-subnav').html($('#ra-share-top'));   
     $('#ra-share-top').removeClass('hide');
+
+    // PERMALINK
+    if ( document.location.hash !== '' ) load_weapon(document.location.hash);
+
 });
 
 </script>
