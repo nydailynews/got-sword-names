@@ -291,7 +291,7 @@ function share_weapon() {
 }
 function load_weapon(hash, data) {
     // When a permalink is loaded, return the blade
-    document.location.href = document.location.origin + document.location.pathname;
+	window.history.replaceState('', '', document.location.origin + document.location.pathname);
     var pieces = hash.substr(1).split('_');
     var names = pieces[0].split('-');
     var weapon_id = pieces[1];
@@ -365,7 +365,7 @@ $.getJSON('data.json', function(name_data) {
 
     // PERMALINK
     if ( document.location.hash !== '' ) load_weapon(document.location.hash, name_data);
-    if ( document.location.search !== '' ) load_weapon(document.location.search, name_data);
+    if ( document.location.search !== '' ) load_weapon(document.location.search.replace('sword=',''), name_data);
 
 });
 
