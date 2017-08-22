@@ -129,7 +129,8 @@ endif;
         <div class="main-text">
             <h1>GoT <span>Game of Thrones</span> Weapon Generator</h1>
             <h2>Choose your weapon</h2>
-            <p>From Widow's Wail to Oathkeeper, the <a href="http://www.nydailynews.com/tags/game-of-thrones">Game of Thrones</a> universe knows how to name a fear-inspiring weapon. Click below to create a noble moniker for your fictional blade.</p>
+            <p>From Widow's Wail to Oathkeeper, the <a href="http://www.nydailynews.com/tags/game-of-thrones">Game of Thrones</a> universe knows how to name a fear-inspiring weapon.</p>
+            <p>Click below to create a noble moniker for your fictional blade.</p>
 			 <ul class="ra-share" id="ra-share-top">
 				<li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://interactive.nydailynews.com/project/choose-your-weapon/">facebook</a> </li>
 				<li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=Make your own sword name with our Game of Thrones sword name generator&url=http://nydn.us/blades&related=nydni,kelliparker">Tweet</a></li>
