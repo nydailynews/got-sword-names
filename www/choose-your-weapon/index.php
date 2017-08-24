@@ -133,7 +133,7 @@ endif;
             <p>Click below to create a noble moniker for your fictional blade.</p>
 			 <ul class="ra-share" id="ra-share-top">
 				<li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://interactive.nydailynews.com/project/choose-your-weapon/">facebook</a> </li>
-				<li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=Make your own sword name with our Game of Thrones sword name generator&url=http://nydn.us/blades&related=nydni,kelliparker">Tweet</a></li>
+				<li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=Make your own sword name with our Game of Thrones sword name generator&url=http://nydn.us/blades&via=nydni&related=nydailynews,kelliparker">Tweet</a></li>
 				<li class="ra-share-e"> <a href="mailto:?subject=Game of Thrones sword name generator&body=http://interactive.nydailynews.com/project/choose-your-weapon/">email</a> </li>
 			</ul>
         </div>
